@@ -1,12 +1,48 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <title>Multiple Choice Quiz</title>
+</head>
 <body>
-
-<h2>Landing page for testing</h2>
-
-<b> Andrew Cutts </b>
-
-
-
+  <h1>Multiple Choice Quiz</h1>
+  <form id="quiz">
+    <!-- Add your questions here -->
+    <div>
+      <p>Question 1</p>
+      <input type="radio" name="question1" value="option1"> Option 1<br>
+      <input type="radio" name="question1" value="option2"> Option 2<br>
+      <input type="radio" name="question1" value="option3"> Option 3<br>
+      <input type="radio" name="question1" value="option4"> Option 4<br>
+    </div>
+    <div>
+      <p>Question 2</p>
+      <input type="radio" name="question2" value="option1"> Option 1<br>
+      <input type="radio" name="question2" value="option2"> Option 2<br>
+      <input type="radio" name="question2" value="option3"> Option 3<br>
+      <input type="radio" name="question2" value="option4"> Option 4<br>
+    </div>
+    <!-- Add more questions as needed -->
+  </form>
+  <button onclick="checkAnswers()">Submit</button>
+  <p id="result"></p>
+  <script>
+    function checkAnswers() {
+      // Check the answers to the questions
+      // Assign a variable to keep track of the number of correct answers
+      let correctAnswers = 0;
+      // Check the first question
+      if (document.querySelector('input[name="question1"]:checked').value === "correctOption") {
+        correctAnswers++;
+      }
+      // Check the second question
+      if (document.querySelector('input[name="question2"]:checked').value === "correctOption") {
+        correctAnswers++;
+      }
+      // Add more checks for additional questions as needed
+      // Display the result
+      document.getElementById("result").innerHTML = "You got " + correctAnswers + " out of " + totalQuestions + " questions correct.";
+    }
+  </script>
 </body>
-</html> 
+</html>
+
